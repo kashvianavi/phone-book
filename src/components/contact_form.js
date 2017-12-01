@@ -39,8 +39,8 @@ handleSubmit(event){
   }
 
   AppActions.saveContact(contact,this.props.contacts);
-  let response = AppActions.recieveContact(contact);
-  console.log(response);
+  // let response = AppActions.recieveContact(contact);
+  // console.log(response);
   this.forceUpdate();
 
 
