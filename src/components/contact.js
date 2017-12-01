@@ -4,7 +4,7 @@ const  Contact = ({contact}) =>
 
 
       <li className = "list-group-item">
-      {contact.name} {contact.phone}
+      {contact.name} {contact.email}{contact.phone}
       </li>
 
 

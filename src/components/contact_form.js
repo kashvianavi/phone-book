@@ -1,5 +1,6 @@
 import React, { Component} from 'react';
 import AppActions from '../actions/app_action';
+import Contact from './contact';
 
 
 
@@ -20,6 +21,11 @@ render() {
       </div>
       <button type = "submit" className = "btn btn-primary">Submit</button>
       </form>
+      <ul className = "col-md-4  list-group">
+      {this.props.contacts.map((contact)=> {
+        return <Contact contact = {contact} key = {contact.id}/>
+      })}
+      </ul>
   </div>
 );
 };
@@ -33,6 +39,10 @@ handleSubmit(event){
   }
 
   AppActions.saveContact(contact,this.props.contacts);
+  let response = AppActions.recieveContact(contact);
+  console.log(response);
+  this.forceUpdate();
+
 
 }
 

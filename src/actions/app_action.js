@@ -17,21 +17,22 @@
 
  });
 }
-}
-/*recieveContact:(contact) => {
-  console.log(contact);
+
+recieveContact:(contacts) => {
+  console.log(contacts);
   fetch('http://www.mocky.io/v2/5a1f10172f00007942ee30f2', {
     mode: 'no-cors',
   method: 'GET',
-  /*headers: {
+  headers: {
   'Accept': 'application/json',
   'Content-Type': 'application/json',
-},
-body: JSON.stringify(contact)
+}
 });
-}*/
-
-
+}
+().then(results => {
+  return results.json();
+})
+}
 
 
 export default AppActions;
