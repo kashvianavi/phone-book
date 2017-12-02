@@ -33,8 +33,8 @@ let AppActions = {
   fetch('http://www.mocky.io/v2/5a1f10172f00007942ee30f2')
   .then((resp) => resp.json()) // Transform the data into json
   .then(function(data) {
-
-    console.log("---"+data)
+    console.log("New Response"+JSON.stringify(data))
+    return JSON.stringify(data)
     })
 
 
