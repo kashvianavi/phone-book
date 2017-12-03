@@ -39,8 +39,15 @@ handleSubmit(event){
   }
 
    let response = AppActions.recieveContact(this.props.contacts);
+   var start = new Date().getTime();
+
   console.log("Response is  "+ response);
-  this.forceUpdate();
+
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > 5000){
+      break;
+    }
+  }  this.forceUpdate();
 
 
 
