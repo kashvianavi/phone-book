@@ -18,11 +18,16 @@ let AppActions = {
 
   recieveContact: (contacts) => {
     console.log(contacts);
-    contacts.forEach(
-      function addToContacts(value) {
-        console.log("removing from contacts")
+    var i = contacts.length
+    while (i--) {
+        console.log("removing " + i)
         contacts.pop();
-      });
+    }
+    // contacts.forEach(
+    //   function removeFromContacts(value) {
+    //     console.log("removing from contacts: " + JSON.stringify(value))
+    //     contacts.pop();
+    //   });
     fetch('http://www.mocky.io/v2/5a1f10172f00007942ee30f2')
       .then((resp) => resp.json()) // Transform the data into json
       .then(function(data) {
@@ -33,6 +38,7 @@ let AppActions = {
           }
         );
         console.log("API  response" + JSON.stringify(data));
+        console.log("UPdated list: " + JSON.stringify(contacts));
         return JSON.stringify(data)
       })
 
