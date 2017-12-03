@@ -38,10 +38,10 @@ handleSubmit(event){
     phone: this.refs.phone.value.trim()
   }
 
-  //AppActions.saveContact(contact,this.props.contacts);
-   let response = AppActions.recieveContact(contact);
+   let response = AppActions.recieveContact(this.props.contacts);
   console.log("Response is  "+ response);
   this.forceUpdate();
+
 
 
 }
